@@ -11,6 +11,8 @@
     padding: 120px 0;
   }
 
+ 
+
   &__h1 {
     font-family: Core.$font-title;
     font-size: 28px;
@@ -19,10 +21,21 @@
     line-height: 38px;
     padding: 0px 16px 32px 16px;
     text-align: center;
+    animation: fadeIn-downUp 2s forwards;
+
     @media (min-width: 768px) {
       padding: 0px 16px 72px 16px;
     }
   }
+
+  @keyframes fadeIn-downUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
 
   &__list {
     display: flex;
@@ -30,9 +43,7 @@
     justify-content: center;
     gap: 32px;
     padding-bottom: 56px;
-    @media (min-width: 768px) {
-      padding-bottom: 72px;
-    }
+  
   }
   &__btn {
     text-align: center;
@@ -44,6 +55,23 @@
     font-size: 16px;
     padding: 16px 40px;
     background-color: Core.$color-green;
+    animation: fadeIn-downUp 2s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+
+
+    @keyframes fadeIn-downUp {
+      from {
+          transform: translateY(100%);
+          opacity: 0;
+
+      }
+      to {
+          transform: translateY(0);
+          opacity: 1;
+
+      }}
+
   }
   &__btn:hover {
     background-color: Core.$color-pink;
@@ -53,7 +81,21 @@
   display: flex;
   flex-direction: column;
   max-width: 300px;
+  opacity: 0;
+  &.in-view{
+    animation: fadeIn 2s forwards;
+  }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }}
+ 
+
+ 
   &__img {
     height: 300px;
     width: 300px;

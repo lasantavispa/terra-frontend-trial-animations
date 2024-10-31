@@ -1,4 +1,16 @@
 @use 'Core.scss';
+.fadeIn{
+    animation: fadeIn 2s forwards;
+        @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+    }
+
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -7,11 +19,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     height: 60px;
+
     @media (min-width: 768px) {
         padding: 20px;
         padding-left: 40px;
         height: 100px;        
     }
+
     &__logo{
         width: 122px;
         @media (min-width: 768px) {
