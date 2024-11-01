@@ -1,59 +1,53 @@
 @use 'Core.scss';
 
 .hero {
-    height: 70vh;
-    color: Core.$color-button-text;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 2s forwards;
+  height: 70vh;
+  color: Core.$color-button-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s forwards;
 
-    
-    @media (min-width:768px) {
-        margin: 0px 2px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        &__shape-1{
-            width: 70%;
-            align-self: end;
-            justify-items: end;
-            grid-column: 1;
-            animation: fadeIn 2s forwards;
-            
-        }
-    
-        &__shape-2{
-            width: 70%;
-            align-self: start;
-            justify-self: end;
-            grid-column: 3;
-            animation: fadeIn 2s forwards;
-        }
+  @media (max-width: 767px) {
+    &__shape-1 {
+      display: none;
+    }
+    &__shape-2 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    &__shape-1 {
+      width: 70%;
+      align-self: end;
+      justify-items: end;
+      grid-column: 1;
+      animation: fadeIn 2s forwards;
     }
 
-    @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+    &__shape-2 {
+      width: 70%;
+      align-self: start;
+      justify-self: end;
+      grid-column: 3;
+      animation: fadeIn 2s forwards;
     }
+  }
 
-    @media (max-width:767px) {
-        &__shape-1{
-            display: none;
-        }
-        &__shape-2{
-            display: none;
-        }
-        
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-   
-  
-    &__content{
-    grid-column: 2;
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,68 +55,67 @@
     text-align: center;
     gap: 24px;
     @media (min-width: 768px) {
-        gap: 32px;
+      gap: 32px;
+      grid-column: 2;
     }
-    }  
+  }
 
-    &__h1{
-        font-family: Core.$font-title;
-        font-size: 36px;
-        letter-spacing: 1px;
-        animation: fadeIn-right 2s forwards;
+  &__h1 {
+    font-family: Core.$font-title;
+    font-size: 36px;
+    letter-spacing: 1px;
+    animation: fadeIn-right 2s forwards;
 
-        
-        @media (min-width: 768px) {
-            font-size: 65px;
-        }
+    @media (min-width: 768px) {
+      font-size: 65px;
     }
+  }
 
-    @keyframes fadeIn-right {
-        from {
-            transform: translateX(100%);
-        }
-        to {
-            transform: translateX(0);
-        }
+  @keyframes fadeIn-right {
+    from {
+      transform: translateX(100%);
     }
-
-    @keyframes fadeIn-left {
-        from {
-            transform: translateX(-100%);
-        }
-        to {
-            transform: translateX(0);
-        }
+    to {
+      transform: translateX(0);
     }
+  }
 
-    &__p{
-        max-width: 584px ;
-        line-height: 24px;
-        letter-spacing: 0.2px;
-        padding: 20px;
-        animation: fadeIn-left 2s forwards;
-
+  @keyframes fadeIn-left {
+    from {
+      transform: translateX(-100%);
     }
-
-    &__btn{
-      text-align: center;
-      color: Core.$color-button-text;
-      font-family: Core.$font-body;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      padding: 16px 40px;
-      animation: fadeIn-right 2s forwards;
-
-      &.btn-green {
-        background-color: Core.$color-green;
-      }
-      &.btn-black {
-        background-color: Core.$color-black;
-      }
+    to {
+      transform: translateX(0);
     }
-    &__btn:hover {
-        background-color: Core.$color-pink;
+  }
+
+  &__p {
+    max-width: 584px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 20px;
+    animation: fadeIn-left 2s forwards;
+  }
+
+  &__btn {
+    text-align: center;
+    color: Core.$color-button-text;
+    font-family: Core.$font-body;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px 40px;
+    animation: fadeIn-right 2s forwards;
+
+    &.btn-green {
+      background-color: Core.$color-green;
     }
+    &.btn-black {
+      background-color: Core.$color-black;
+    }
+  }
+  &__btn:hover {
+    background-color: Core.$color-pink;
+  }
 }

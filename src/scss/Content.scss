@@ -11,8 +11,6 @@
     padding: 120px 0;
   }
 
- 
-
   &__h1 {
     font-family: Core.$font-title;
     font-size: 28px;
@@ -30,12 +28,12 @@
 
   @keyframes fadeIn-downUp {
     from {
-        transform: translateY(100%);
+      transform: translateY(100%);
     }
     to {
-        transform: translateY(0);
+      transform: translateY(0);
     }
-}
+  }
 
   &__list {
     display: flex;
@@ -43,7 +41,6 @@
     justify-content: center;
     gap: 32px;
     padding-bottom: 56px;
-  
   }
   &__btn {
     text-align: center;
@@ -59,19 +56,16 @@
     animation-delay: 2s;
     opacity: 0;
 
-
     @keyframes fadeIn-downUp {
       from {
-          transform: translateY(100%);
-          opacity: 0;
-
+        transform: translateY(100%);
+        opacity: 0;
       }
       to {
-          transform: translateY(0);
-          opacity: 1;
-
-      }}
-
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   }
   &__btn:hover {
     background-color: Core.$color-pink;
@@ -82,26 +76,25 @@
   flex-direction: column;
   max-width: 300px;
   opacity: 0;
-  &.in-view{
+  &.in-view {
     animation: fadeIn 2s forwards;
   }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }}
- 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
- 
   &__img {
     height: 300px;
     width: 300px;
+    object-fit: cover;
     @media (min-width: 768px) {
       height: 378px;
-
       width: 283px;
     }
   }
